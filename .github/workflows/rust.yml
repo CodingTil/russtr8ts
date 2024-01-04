@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install scip via anaconda
+        run: conda install --channel conda-forge scip -y
       - name: Build
         run: cargo build --release --all-features --verbose
       - name: Test
